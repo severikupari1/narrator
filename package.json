@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -10,16 +12,48 @@
     "@types/node": "^12.12.42",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "i18next": "^19.5.2",
+    "i18next-chained-backend": "^2.0.1",
+    "i18next-localstorage-backend": "^3.1.1",
+    "i18next-xhr-backend": "^3.2.2",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.0",
+    "react-router": "^5.2.0",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5"
   },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "i18next-extract",
+        {
+          "locales": [
+            "en",
+            "fin"
+          ],
+          "keyAsDefaultValue": [
+            "en",
+            "fin"
+          ],
+          "keySeparator": null,
+          "nsSeparator": null,
+          "useI18nextDefaultValueForDerivedKeys": false,
+          "outputPath": "public/locales/{{locale}}/{{ns}}.json"
+        }
+      ]
+    ]
+  },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env TSC_WATCHFILE=UseFsEventsWithFallbackDynamicPolling react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "i18next-extract": "bash -c \"NODE_ENV=development ./node_modules/.bin/babel -f .babelrc --ignore \"src/__tests__/\" './src/**/*.{js,jsx,ts,tsx}'\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +69,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "babel-plugin-i18next-extract": "^0.7.2",
+    "cross-env": "^7.0.2"
   }
 }

@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Box, createStyles, makeStyles, Theme } from "@material-ui/core";
+import PersistentDrawerLeft from "./Components/PersistentDrawerLeft";
+import { Route, Switch } from 'react-router';
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            flexGrow: 1,
+        },
+        menuButton: {
+            marginRight: theme.spacing(2),
+        },
+        title: {
+            flexGrow: 1,
+        },
+    }),
+);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const classes = useStyles();
+
+    return (
+        <Box id={'base'}>
+            <Box className={'base-container'}>
+
+                <PersistentDrawerLeft children={
+                    <Box>
+                        asd
+                    </Box>
+                }/>
+            </Box>
+        </Box>
+    );
 }
 
 export default App;
