@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Box, createStyles, makeStyles, Theme } from "@material-ui/core";
 import PersistentDrawerLeft from "./Components/PersistentDrawerLeft";
-import { Route, Switch } from 'react-router';
+
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
