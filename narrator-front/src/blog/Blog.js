@@ -34,7 +34,7 @@ const mainFeaturedPost = {
   title: 'Narrator',
   description:
     "Tule kanssamme tutkimaan kuinka korteista luodaan tarinoita!",
-  image: 'https://source.unsplash.com/random',
+  image: 'https://cdn.pixabay.com/photo/2017/02/07/03/39/responsive-2044932_1280.png',
   imgText: 'main image description',
   linkText: 'Korttien luontiin...',
 };
