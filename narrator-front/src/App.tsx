@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.scss';
-import { Box, createStyles, makeStyles, Theme } from "@material-ui/core";
+import { createStyles, makeStyles, Theme, WithStyles } from "@material-ui/core";
 import PersistentDrawerLeft from "./Components/PersistentDrawerLeft";
+import Blog from "./blog/Blog";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -20,18 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
 function App() {
     const classes = useStyles();
 
-    return (
-        <Box id={'base'}>
-            <Box className={'base-container'}>
-
-                <PersistentDrawerLeft children={
-                    <Box>
-                        asd
-                    </Box>
-                }/>
-            </Box>
-        </Box>
-    );
+    return Blog;
 }
 
 export default App;
